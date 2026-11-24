@@ -50,35 +50,15 @@ footer{background:var(--teal2);color:#fff;text-align:center;padding:26px 16px;ma
 .wa{position:fixed;right:14px;bottom:14px;background:#25d366;color:#fff;border-radius:30px;padding:10px 18px;font-weight:600;text-decoration:none;z-index:20;box-shadow:0 4px 14px #0004}
 @media(prefers-reduced-motion:reduce){.sl{transition:none}}
 </style>
-
-<!-- Meta Pixel Code -->
+<!-- Meta Pixel -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
-s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1040166942445415');
-fbq('track', 'PageView');
-fbq('track', 'ViewContent', {
-  content_name: 'Portable Folding Silicone Electric Kettle',
-  content_type: 'product',
-  content_ids: ['portable-folding-silicone-electric-kettle'],
-  value: 999,
-  currency: 'BDT'
-});
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1040166942445415');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Portable Folding Silicone Electric Kettle',content_type:'product',value:999,currency:'BDT'});
 </script>
-<!-- End Meta Pixel Code -->
-
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1040166942445415&ev=PageView&noscript=1" alt=""></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
-
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1040166942445415&ev=PageView&noscript=1"
-/></noscript>
-
 <div class="top"><a class="brand" href="#"><img src="https://res.cloudinary.com/oknbij8b/image/upload/v1789106761/6131828082000728570_bdu1la.webp" alt="Ketu's Mart লোগো"><span>Ketu's Mart</span></a>
 <div class="mid"><b>🔥 সাত দিনের বিশেষ ধামাকা!</b>
 <div class="t" aria-live="off"><span id="d">০০<small>দিন</small></span><span id="h">০০<small>ঘণ্টা</small></span><span id="m">০০<small>মিনিট</small></span><span id="s">০০<small>সেকেন্ড</small></span></div></div></div>
@@ -151,14 +131,6 @@ function bar(){document.documentElement.style.setProperty('--bar',topbar.offsetH
 bar();addEventListener('resize',bar);addEventListener('load',bar);
 let cur=0;const sl=hero.querySelectorAll('.sl'),dt=dots.children;
 setInterval(()=>{sl[cur].classList.remove('on');dt[cur].classList.remove('on');cur=(cur+1)%sl.length;sl[cur].classList.add('on');dt[cur].classList.add('on')},3000);
-
-// Meta Pixel: track WhatsApp contact clicks
-document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-  link.addEventListener('click', () => {
-    if (typeof fbq === 'function') fbq('track', 'Contact', {content_name: 'WhatsApp'});
-  });
-});
-
 // ৭ দিনের টাইমার: প্রতি ৭ দিন পর নিজে থেকেই রিসেট
 const C=7*864e5;
 function tick(){const r=C-(Date.now()%C);const d=Math.floor(r/864e5),h=Math.floor(r%864e5/36e5),m=Math.floor(r%36e5/6e4),s=Math.floor(r%6e4/1e3);
@@ -169,28 +141,12 @@ const q=document.getElementById('q'),z=document.getElementById('z');
 function calc(){const n=Math.max(1,Math.min(20,+q.value||1));q.value=n;const p=n*999,d=+z.value;
 sp.textContent='৳'+bn(p);sd.textContent='৳'+bn(d);st.textContent='৳'+bn(p+d)}
 mi.onclick=()=>{q.value=(+q.value||1)-1;calc()};pl.onclick=()=>{q.value=(+q.value||1)+1;calc()};q.oninput=calc;z.onchange=calc;calc();
+let ic=0;f.addEventListener('focusin',()=>{if(!ic){ic=1;try{fbq('track','InitiateCheckout',{value:+st.textContent.replace(/[^০-৯]/g,'').replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d))||999,currency:'BDT',num_items:+q.value||1})}catch(_){}}});
 f.onsubmit=async e=>{e.preventDefault();
-const btn=f.querySelector('button[type=submit]');
-if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', {
-  content_name: 'Portable Folding Silicone Electric Kettle',
-  content_type: 'product',
-  content_ids: ['portable-folding-silicone-electric-kettle'],
-  value: (+q.value * 999) + (+z.value),
-  currency: 'BDT'
-});
-btn.disabled=true;btn.textContent='অর্ডার পাঠানো হচ্ছে...';
+const btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='অর্ডার পাঠানো হচ্ছে...';
 const n2=+q.value,dz=+z.value;
 const o={orderId:'ORD-'+Date.now().toString().slice(-6),name:n.value.trim(),phone:p.value,address:a.value.trim(),area:dz==70?'ঢাকার ভিতরে':'ঢাকার বাইরে',qty:n2,total:n2*999+dz,status:'Pending',createdAt:firebase.firestore.FieldValue.serverTimestamp()};
-try{
-await db.collection('orders').add(o);
-if (typeof fbq === 'function') fbq('track', 'Lead', {
-  content_name: 'Portable Folding Silicone Electric Kettle',
-  content_type: 'product',
-  content_ids: ['portable-folding-silicone-electric-kettle'],
-  value: o.total,
-  currency: 'BDT'
-});
-f.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'})}
+try{await db.collection('orders').add(o);try{fbq('track','Purchase',{value:o.total,currency:'BDT',content_type:'product',num_items:o.qty})}catch(_){};f.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'})}
 catch(err){console.error(err);btn.disabled=false;btn.textContent='অর্ডার কনফার্ম করুন';alert('দুঃখিত, অর্ডার পাঠানো যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন অথবা ০১৯৫০১৩৭৪৭২ নম্বরে যোগাযোগ করুন।')}};
 </script>
 </body>
