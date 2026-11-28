@@ -50,26 +50,6 @@ footer{background:var(--teal2);color:#fff;text-align:center;padding:26px 16px;ma
 .wa{position:fixed;right:14px;bottom:14px;background:#25d366;color:#fff;border-radius:30px;padding:10px 18px;font-weight:600;text-decoration:none;z-index:20;box-shadow:0 4px 14px #0004}
 @media(prefers-reduced-motion:reduce){.sl{transition:none}}
 </style>
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1040166942445415');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Portable Folding Silicone Electric Kettle',content_type:'product',value:999,currency:'BDT'});
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1040166942445415&ev=PageView&noscript=1" alt=""></noscript>
-<!-- End Meta Pixel -->
-  <!-- TikTok Pixel Code Start -->
-<script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-  ttq.load('DC4S8UJC77U6QF2N078G');
-  ttq.page();
-}(window, document, 'ttq');
-</script>
-<!-- TikTok Pixel Code End -->
 </head>
 <body>
 <div class="top"><a class="brand" href="#"><img src="https://res.cloudinary.com/oknbij8b/image/upload/v1789106761/6131828082000728570_bdu1la.webp" alt="Ketu's Mart লোগো"><span>Ketu's Mart</span></a>
@@ -85,7 +65,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <h1>পোর্টেবল ফোল্ডিং সিলিকন ইলেকট্রিক কেটলি</h1>
 <p>মাত্র ৪ মিনিটে পানি গরম, ভাঁজ করে যেখানে খুশি নিয়ে যান।</p>
 <div class="price"><del>৳১২৫০</del><strong>৳৯৯৯</strong><span class="off">বিশেষ ডিসকাউন্ট</span></div>
-<a class="btn" href="#order">এখনই অর্ডার করুন</a>
+<a class="btn" id="btn-order-now" data-event="order-now" href="#order">এখনই অর্ডার করুন</a>
 </div>
 
 <section><h2>পণ্য পরিচিতি</h2>
@@ -110,15 +90,15 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <section id="order"><h2 style="text-align:center">অর্ডার করতে ফর্মটি পূরণ করুন</h2>
 <div class="order">
 <div class="cod">✅ সম্পূর্ণ ক্যাশ অন ডেলিভারি, পণ্য হাতে পেয়ে টাকা দিন। কোনো অগ্রিম টাকা লাগবে না।</div>
-<form id="f">
+<form id="order-form" data-event="order-form">
 <label for="n">আপনার নাম</label><input id="n" required placeholder="পুরো নাম লিখুন">
 <label for="p">মোবাইল নম্বর</label><input id="p" required inputmode="numeric" pattern="01[0-9]{9}" maxlength="11" placeholder="01XXXXXXXXX">
 <label for="a">সম্পূর্ণ ঠিকানা</label><textarea id="a" rows="3" required placeholder="বাসা/রোড, থানা, জেলা"></textarea>
 <label for="z">ডেলিভারি এলাকা</label><select id="z"><option value="70">ঢাকার ভিতরে (৳৭০)</option><option value="110">ঢাকার বাইরে (৳১১০)</option></select>
 <label>কতটি নিতে চান</label>
-<div class="qty"><button type="button" id="mi" aria-label="কমান">−</button><input id="q" type="number" min="1" max="20" value="1"><button type="button" id="pl" aria-label="বাড়ান">+</button></div>
+<div class="qty"><button type="button" id="mi" data-event="qty-minus" aria-label="কমান">−</button><input id="q" type="number" min="1" max="20" value="1"><button type="button" id="pl" data-event="qty-plus" aria-label="বাড়ান">+</button></div>
 <div class="sum"><p><span>পণ্যের দাম</span><span id="sp"></span></p><p><span>ডেলিভারি চার্জ</span><span id="sd"></span></p><p class="tot"><span>সর্বমোট</span><span id="st"></span></p></div>
-<button class="btn" type="submit">অর্ডার কনফার্ম করুন</button>
+<button class="btn" type="submit" id="btn-confirm-order" data-event="confirm-order">অর্ডার কনফার্ম করুন</button>
 </form>
 <div class="ok" id="ok"><h3>✅ আপনার অর্ডার গ্রহণ করা হয়েছে</h3><p>ধন্যবাদ! আমাদের প্রতিনিধি শীঘ্রই আপনাকে ফোন করে নিশ্চিত করবেন।</p></div>
 </div></section>
@@ -126,13 +106,14 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 <footer><p><b>Ketu's Mart</b></p><p>যোগাযোগ ও হোয়াটসঅ্যাপ: <a href="tel:01950137472">০১৯৫০১৩৭৪৭২</a></p>
 <p><a href="https://www.facebook.com/profile.php?id=61552297742624" target="_blank" rel="noopener">আমাদের ফেসবুক পেজ</a></p><p style="font-size:14px;opacity:.8">© Ketu's Mart, সর্বস্বত্ব সংরক্ষিত</p></footer>
-<a class="wa" href="https://wa.me/8801950137472" target="_blank" rel="noopener">💬 হোয়াটসঅ্যাপ</a>
+<a class="wa" id="btn-whatsapp" data-event="whatsapp" href="https://wa.me/8801950137472" target="_blank" rel="noopener">💬 হোয়াটসঅ্যাপ</a>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
 const firebaseConfig={apiKey:"AIzaSyAqHiflOPPef6_52W4zL-H8GGHIIwxuBOY",authDomain:"ketu-s-mart-kettli.firebaseapp.com",projectId:"ketu-s-mart-kettli",storageBucket:"ketu-s-mart-kettli.firebasestorage.app",messagingSenderId:"180020303223",appId:"1:180020303223:web:90326c66fcae43b7e77d72"};
 firebase.initializeApp(firebaseConfig);const db=firebase.firestore();
+const f=document.getElementById('order-form');
 const IMGS=["https://res.cloudinary.com/oknbij8b/image/upload/v1795124583/WhatsApp_Image_2026-11-20_at_3.38.51_AM_phulk4.jpg","https://res.cloudinary.com/oknbij8b/image/upload/v1795124585/WhatsApp_Image_2026-11-20_at_3.38.52_AM_1_vrntph.jpg","https://res.cloudinary.com/oknbij8b/image/upload/v1795124581/WhatsApp_Image_2026-11-20_at_3.38.52_AM_pe4jgq.jpg","https://res.cloudinary.com/oknbij8b/image/upload/v1795124583/WhatsApp_Image_2026-11-20_at_3.38.53_AM_sgizck.jpg"];
 const bn=n=>String(n).replace(/\d/g,d=>"০১২৩৪৫৬৭৮৯"[d]);
 const hero=document.getElementById('hero'),dots=document.getElementById('dots'),topbar=document.querySelector('.top');
@@ -154,12 +135,11 @@ const q=document.getElementById('q'),z=document.getElementById('z');
 function calc(){const n=Math.max(1,Math.min(20,+q.value||1));q.value=n;const p=n*999,d=+z.value;
 sp.textContent='৳'+bn(p);sd.textContent='৳'+bn(d);st.textContent='৳'+bn(p+d)}
 mi.onclick=()=>{q.value=(+q.value||1)-1;calc()};pl.onclick=()=>{q.value=(+q.value||1)+1;calc()};q.oninput=calc;z.onchange=calc;calc();
-let ic=0;f.addEventListener('focusin',()=>{if(!ic){ic=1;try{fbq('track','InitiateCheckout',{value:+st.textContent.replace(/[^০-৯]/g,'').replace(/[০-৯]/g,d=>'০১২৩৪৫৬৭৮৯'.indexOf(d))||999,currency:'BDT',num_items:+q.value||1})}catch(_){}}});
 f.onsubmit=async e=>{e.preventDefault();
 const btn=f.querySelector('button[type=submit]');btn.disabled=true;btn.textContent='অর্ডার পাঠানো হচ্ছে...';
 const n2=+q.value,dz=+z.value;
 const o={orderId:'ORD-'+Date.now().toString().slice(-6),name:n.value.trim(),phone:p.value,address:a.value.trim(),area:dz==70?'ঢাকার ভিতরে':'ঢাকার বাইরে',qty:n2,total:n2*999+dz,status:'Pending',createdAt:firebase.firestore.FieldValue.serverTimestamp()};
-try{await db.collection('orders').add(o);try{fbq('track','Purchase',{value:o.total,currency:'BDT',content_type:'product',num_items:o.qty})}catch(_){};f.style.display='none';ok.style.display='block';ok.scrollIntoView({behavior:'smooth',block:'center'})}
+try{await db.collection('orders').add(o);location.href='thank-you.html?order='+encodeURIComponent(o.orderId)+'&value='+o.total+'&qty='+o.qty}
 catch(err){console.error(err);btn.disabled=false;btn.textContent='অর্ডার কনফার্ম করুন';alert('দুঃখিত, অর্ডার পাঠানো যায়নি। ইন্টারনেট দেখে আবার চেষ্টা করুন অথবা ০১৯৫০১৩৭৪৭২ নম্বরে যোগাযোগ করুন।')}};
 </script>
 </body>
